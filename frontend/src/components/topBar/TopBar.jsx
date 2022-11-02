@@ -3,9 +3,18 @@ function TopBar() {
   return (
     <div className='top'>
       <div className='topLeft'>
-        <i className='topListIcon fa-brands fa-instagram'></i>
-        <i className='topListIcon fa-brands fa-twitter'></i>
-        <i className='topListIcon fa-brands fa-linkedin'></i>
+        <i
+          className='topListIcon fa-brands fa-twitter'
+          style={{ color: '#1DA1F2' }}
+        ></i>
+        <i
+          className='topListIcon fa-brands fa-instagram'
+          style={{ color: '#bc2a8d' }}
+        ></i>
+        <i
+          className='topListIcon fa-brands fa-linkedin'
+          style={{ color: '#0077b5' }}
+        ></i>
       </div>
       <div className='topCenter'>
         <ul className='topList'>
