@@ -1,59 +1,98 @@
-.top{
-    width: 100%;
-    background-color: white;
-    height: 50px;
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    font-family: 'Josefin Sans', sans-serif;
-    z-index: 999;
+.top {
+  width: 100%;
+  background-color: white;
+  height: 50px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  font-family: 'Josefin Sans', sans-serif;
+  z-index: 999;
 }
 
-.topLeft, .topRight{
-    flex: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.topLeft,
+.topRight {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.topCenter{
-    flex: 6
+.topCenter {
+  flex: 6;
 }
 
-.topList{
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    align-items: center;
-    justify-content: center;
+.topList {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
 }
 
-.topListItem{
+.topListItem {
   font-size: 18px;
   margin-right: 20px;
   font-weight: 300;
-  cursor: pointer;;
+  cursor: pointer;
 }
 
-.topListIcon{
-    font-size: 20px;
-    margin-right: 10px;
-    color: gray;
-    cursor: pointer;
+.topListIcon {
+  font-size: 20px;
+  margin-right: 10px;
+  color: gray;
+  cursor: pointer;
 }
 
-.topImg{
-    width: 10%;
-    height: 10%;
-    border-radius: 50%;
-    object-fit: cover;
+.topImg {
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.topSearchIcon{
-    font-size: 18px;
-    color: #666;
-    cursor: pointer;
-    margin-left: 15px;
+.topSearchIcon {
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+  margin-left: 15px;
 }
+.hamBurger {
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.hamBurger:hover{
+    background-color: #eee;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
