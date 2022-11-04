@@ -4,6 +4,7 @@ const PORT = 5000 | process.env.PORT;
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const authRoute = require('./routes/auth')
+const userRoute = require('./routes/user')
 
 dotenv.config();
 app.use(express.json());
@@ -19,6 +20,7 @@ const connect = async () => {
 };
 
 app.use('/api/auth',authRoute);
+app.use('/api/user',userRoute);
 
 app.listen(PORT, () => {
   connect();
