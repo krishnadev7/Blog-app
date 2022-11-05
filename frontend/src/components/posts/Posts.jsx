@@ -2,21 +2,12 @@ import React from 'react'
 import Post from '../post/Post'
 import './posts.css'
 
-function Posts() {
+function Posts({posts}) {
   return (
     <div className='posts'>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
+      {posts && posts.map((post,i) => (
+        <Post post={post} key={i}/>
+      ))}
     </div>
   )
 }
