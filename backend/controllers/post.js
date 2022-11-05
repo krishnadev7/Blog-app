@@ -42,13 +42,13 @@ const DeletePost = async (req, res) => {
     const post = await Post.findById(req.params.id);
     if (post.username === req.body.username) {
       try {
-        await Post.findByIdAndDelete(req.params.id)
+        await Post.findByIdAndDelete(req.params.id);
         return res.status(200).json('post has been deleted');
       } catch (err) {
         res.status(500).json(err);
       }
     } else {
-     return res.status(401).json('you can delete only your post!');
+      return res.status(401).json('you can delete only your post!');
     }
   } catch (error) {
     res.status(500).json(error);
@@ -56,13 +56,35 @@ const DeletePost = async (req, res) => {
 };
 
 //Get post
-const Getpost = async(req,res) => {
-    try {
-        const post = await Post.findById(req.params.id)
-        res.status(200).json(post)
-    } catch (err) {
-        res.status(500).json(err)
+const Getpost = async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
+    res.status(200).json(post);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
+//Get All post
+const GetAllPost = async (req, res) => {
+  const username = req.query.user;
+  const catName = req.query.cat;
+  try {
+    let posts;
+    if (username) {
+      posts = await Post.find({ username: username });
+    } else if (catName) {
+      posts = await Post.find({
+        categories: {
+          $in: [catName],
+        },
+      });
+    } else {
+      posts = await Post.find();
     }
-}
+    res.status(200).json(posts);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
 
-module.exports = { createPost,updatePost,DeletePost,Getpost };
+module.exports = { createPost, updatePost, DeletePost, Getpost, GetAllPost };
