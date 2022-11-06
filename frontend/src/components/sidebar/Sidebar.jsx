@@ -11,7 +11,6 @@ function Sidebar() {
   useEffect(() => {
     const getCategory = async () => {
       const res = await axios.get('/category');
-      console.log(res);
       setCategories(res.data);
     };
     getCategory();

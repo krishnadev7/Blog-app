@@ -38,6 +38,11 @@
     padding: 10px;
 }
 
+.loginButton:disabled{
+    cursor: not-allowed;
+    background-color: rgb(64, 152, 152);
+}
+
 .LregisterButton{
     position: absolute;
     top: 80px;

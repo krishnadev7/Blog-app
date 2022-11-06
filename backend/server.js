@@ -4,6 +4,7 @@ const PORT = 5000 | process.env.PORT;
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const multer = require('multer');
+const path = require('path')
 
 const authRoute = require('./routes/auth')
 const userRoute = require('./routes/user')
@@ -13,6 +14,7 @@ const categoryRoute = require('./routes/category')
 
 dotenv.config();
 app.use(express.json());
+app.use('/images',express.static(path.join(__dirname,'/images')))
 
 
 const connect = async () => {
@@ -29,7 +31,7 @@ const storage = multer.diskStorage({
     cb(null, 'images');
   },
   filename: (req, file, cb) => {
-    cb(null, 'hello.jpeg');
+    cb(null, req.body.name);
   },
 });
 

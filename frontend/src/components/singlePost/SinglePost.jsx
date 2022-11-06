@@ -8,11 +8,12 @@ function SinglePost() {
   const location = useLocation();
   const path = location.pathname.split('/')[2];
   const [post,setPost] = useState({})
+    const PF = 'http://localhost:5000/images/';
+
 
   useEffect(() => {
     const getPost = async()=> {
       const res = await axios.get(`/post/${path}`);
-      console.log(res);
       setPost(res.data);
     }
     getPost();
@@ -22,7 +23,7 @@ function SinglePost() {
     <div className='singlePost'>
       <div className='singlePostWrapper'>
         {post.photo && (
-          <img src={post.photo} alt='' className='singlePostImg' />
+          <img src={PF + post.photo} alt='' className='singlePostImg' />
         )}
 
         <h1 className='singlePostTitle'>
