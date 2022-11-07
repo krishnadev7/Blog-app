@@ -8,7 +8,7 @@ import axios from 'axios';
 
 function Write() {
   const { user } = useContext(UserContext);
-
+console.log(user.username);
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
   const [file, setFile] = useState();
@@ -39,6 +39,7 @@ function Write() {
       window.location.replace(`post/${res.data._id}`);
     } catch (error) {
       console.log(error);
+      console.log('axios error');
     }
   };
 

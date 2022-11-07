@@ -75,3 +75,9 @@
       border: none;
       cursor: pointer;
 }
+
+.update{
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+}

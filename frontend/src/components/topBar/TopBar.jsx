@@ -4,6 +4,7 @@ import { UserContext } from '../../context/Context';
 import { useContext } from 'react';
 
 function TopBar() {
+    const PF = 'http://localhost:5000/images/';
   const { user, dispatch } = useContext(UserContext);
   const handleLogout = e => {
     e.preventDefault();
@@ -48,7 +49,7 @@ function TopBar() {
           <Link to='/settings'>
             <img
               className='topImg'
-              src={user.profilePic}
+              src={user.profilePic ? PF + user.profilePic : PF + 'avatar.jpeg'}
               alt=''
             />
           </Link>
@@ -66,7 +67,7 @@ function TopBar() {
             </li>
           </ul>
         )}
-        <i className='topSearchIcon fas fa-search'></i>
+        {/* <i className='topSearchIcon fas fa-search'></i> */}
       </div>
     </div>
   );

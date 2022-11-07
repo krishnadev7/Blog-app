@@ -31,6 +31,23 @@ const userReducer = (state, action) => {
         loading: false,
         error: true,
       };
+    case 'UPDATE_START':
+      return {
+        ...state,
+        loading: true,
+      };
+    case 'UPDATE_SUCCESS':
+      return {
+        user: action.payload,
+        loading: false,
+        error: false,
+      };
+    case 'UPDATE_FAILURE':
+      return {
+        user: state.user,
+        loading: false,
+        error: true,
+      };
     case 'LOGOUT':
       return{
         user: null,

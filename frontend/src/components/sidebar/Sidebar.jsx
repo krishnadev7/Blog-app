@@ -1,12 +1,16 @@
 import axios from 'axios';
 import React from 'react';
+import { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../context/Context';
 import './sidebar.css';
 
 function Sidebar() {
   const [categories, setCategories] = useState([]);
+  const { user } = useContext(UserContext);
+  const PF = 'http://localhost:5000/images/';
 
   useEffect(() => {
     const getCategory = async () => {
@@ -18,25 +22,23 @@ function Sidebar() {
 
   return (
     <div className='sidebar'>
-      <div className='sidebarItem'>
-        <span className='sidebarTitle'>About Me</span>
-        <img
-          src='https://media.istockphoto.com/photos/headshot-portrait-of-smiling-male-employee-in-office-picture-id1309328823?b=1&k=20&m=1309328823&s=170667a&w=0&h=a-f8vR5TDFnkMY5poQXfQhDSnK1iImIfgVTVpFZi_KU='
-          alt=''
-          className='sidebarImg'
-        />
-        <p className='sidebarP'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
-          dolor sit amet, consectetur adipisicing elit. Culpa sint, quaerat ipsa
-          aliquam vero quisquam similique enim quidem temporibus tenetur!
-        </p>
-      </div>
+      {user && (
+        <div className='sidebarItem'>
+          <span className='sidebarTitle'>About Me</span>
+          {user && (
+            <img src={user.profilePic? PF + user.profilePic : PF + 'avatar.jpeg'} alt='' className='sidebarImg' />
+          )}
+          <p className='sidebarP'>
+            Hello guys my name is {user.username}
+          </p>
+        </div>
+      )}
       <div className='sidebarItem'>
         <span className='sidebarTitle'>Categories</span>
         <ul className='sidebarList'>
-          {categories.map(category => (
+          {categories.map((category,i) => (
             <Link to={`/?cat=${category.name}`} className='link'>
-              <li className='sidebarListItem'>{category.name}</li>
+              <li className='sidebarListItem' key={i}>{category.name}</li>
             </Link>
           ))}
         </ul>
