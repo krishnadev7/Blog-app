@@ -27,12 +27,14 @@ $ cd BLOG-APP
 
 ```
 $ cd backend
+$ npm install
 $ npm start
 ```
 ## 4. Run frontend ##
 ```
 #open new terminal
 $ cd frontend
+$ npm install
 $ npm start
 ```
  
