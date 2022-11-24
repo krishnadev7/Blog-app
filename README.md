@@ -1,6 +1,8 @@
 # Blog-app
 It's a simple blog app with lots of features. This was made using the Mern stack
 
+![Uploading Screenshot (16).png…]()
+
 features
 ========
 <ol>
@@ -20,7 +22,7 @@ $ cd BLOG-APP
 ```
 ## 2. Setup MonogDb ##
 * create a database at (https://cloud.mongodb.com)
-* create .env file at root folder
+* create .env file at backend root folder
 * set MONGO_URI = your mongodb connection url
 
 ## 3.Run Backend ##
