@@ -1,7 +1,8 @@
 # Blog-app
 It's a simple blog app with lots of features. This was made using the Mern stack
 
-![Uploading Screenshot (16).png…]()
+![Screenshot (16)](https://user-images.githubusercontent.com/77377184/203699289-06ce80c1-7b1e-407f-aa3f-eaf836fcc862.png)
+
 
 features
 ========
